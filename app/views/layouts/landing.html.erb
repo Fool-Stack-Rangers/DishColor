@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Fr Template" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Fr Template" %>">
+    <%= stylesheet_link_tag 'landing', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'landing', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header>
+      <%= render 'static_pages/navigation' %>
+    </header>
+    <main role="main">
+      <%= yield %>
+    </main>
+    <footer>
+      <%= render 'static_pages/footer' %>
+    </footer>
+  </body>
+</html>
