@@ -1,0 +1,336 @@
+//= require reset
+//= require_self
+//= require animations
+@import compass
+
+$b-width: 960px
+$c-primary: #FFBA00
+$b-fontFamily-heading: "Open Sans", helvetica, arial, Hiragino Sans GB, "Heiti TC", "Microsoft YaHei", sans-serif
+$b-fontFamily-serif: Georgia, Cambria, "Times New Roman", Times, BiauKai, DFKai-sb, serif
+
+=container
+  width: $b-width
+  margin: 0 auto
+
+button
+  outline: none
+
+body
+  font-family: $b-fontFamily-heading
+
+.container
+  +container
+
+.nav
+  height: 60px
+  border-bottom: 1px solid #ddd
+
+.nav-logo
+  display: inline-block
+  max-width: 200px
+  padding: 10px 0
+  margin-right: 20px
+  > img
+    // width: 40px
+    height: 40px
+
+a.nav-login
+  display: block
+  border: 2px solid #ccc
+  border-radius: 4px
+  color: #aaa
+  background-color: rgba(0, 0, 0, 0)
+  font-size: 16px
+  float: right
+  height: 32px
+  line-height: 30px
+  margin: 10px 0
+  cursor: pointer
+  padding: 0 20px
+  &:hover
+    box-shadow: 1px 1px 2px 1px #ddd
+  &:active
+    box-shadow: none
+
+// -------------------------------------
+//   HERO
+// -------------------------------------
+#hero
+  +container
+  height: 450px
+  padding: 80px 0
+  padding-bottom: 80px
+  font-family: $b-fontFamily-heading
+  &:after
+    display: table
+    content: ""
+    clear: both
+
+.hero-left
+  width: 50%
+  margin-top: 30px
+  float: left
+  h1
+    font-size: 56px
+    line-height: 1.5
+    margin-bottom: 10px
+  .desc
+    font-size: 28px
+    line-height: 1.2
+    color: #555
+    margin-bottom: 30px
+    small
+      font-size: 18px
+      line-height: 1.2
+
+a.cta
+  +single-transition(all, 0.3s)
+  display: inline-block
+  border-radius: 4px
+  box-shadow: 0 2px 0 darken($c-primary, 5%)
+  background-color: $c-primary
+  width: 200px
+  line-height: 50px
+  text-align: center
+  color: #fff
+  text-decoration: none
+  &:hover
+    background-color: lighten($c-primary, 10%)
+  &:active
+    margin-top: 2px
+    box-shadow: 0 0px 0 darken($c-primary, 5%)
+    background-color: $c-primary
+
+.hero-right
+  position: relative
+  float: right
+  width: 50%
+
+.hero-photo
+  padding: 20px
+  > img
+    width: 100%
+
+// -------------------------------------
+//   STORY
+// -------------------------------------
+
+#story
+  min-height: 180px
+  background-color: #fff
+  font-family: $b-fontFamily-heading
+
+.story-content
+  +container
+  position: relative
+  padding-top: 40px
+  color: #555
+  &:before,
+  &:after
+    display: block
+    content: ""
+    width: 60%
+    position: absolute
+    left: 50%
+    margin-left: -30%
+    height: 2px
+    border-radius: 2px
+    background-color: #EEE
+  &:before
+    top: -1px
+  &:after
+    bottom: -1px
+
+.story-dialog
+  position: relative
+  margin-bottom: 40px
+  text-align: center
+  // &:after
+  //   display: table
+  //   content: ""
+  //   clear: both
+  &:before
+  //   position: absolute
+  //   top: 10px
+  //   left: 20px
+  //   color: #ccc
+  //   content: "'"
+  //   font-size: 4em
+  //   line-height: 0.1em
+  //   // margin-right: 0.25em
+  //   vertical-align: -0.4em
+  // &:after
+  //   position: absolute
+  //   top: 10px
+  //   right: 20px
+  //   color: #ccc
+  //   content: "'"
+  //   font-size: 4em
+  //   line-height: 0.1em
+  //   // margin-left: 0.25em
+  //   vertical-align: -0.4em
+  > img
+    border-radius: 50%
+    max-width: 140px
+    height: 140px
+    float: left
+  > .desc
+  // &.left
+  //   > img
+  //     position: absolute
+  //     top: 0
+  //     left: 30px
+  //   > .desc
+  //     // margin-left: 200px
+  //     &:after
+  //       left: -11px
+  // &.right
+  //   > img
+  //     position: absolute
+  //     top: 0
+  //     right: 30px
+  //   > .desc
+  //     padding-top: 10px
+  //     // margin-right: 200px
+  //     &:after
+  //       right: -11px
+  .desc
+    position: relative
+    // background-color: #FFF2CD
+    border-radius: 8px
+    padding: 20px 40px
+    margin: 0px 20px
+    margin-bottom: 20px
+    padding-top: 0
+    padding-bottom: 40px
+    // box-shadow: 1px 1px 0px #DDD
+    font-size: 24px
+    line-height: 1.5
+    // &:after
+    //   +rotate
+    //   position: absolute
+    //   display: block
+    //   content: ""
+    //   height: 20px
+    //   width: 20px
+    //   background-color: #FFF2CD
+    //   top: 15px
+
+#step
+  +container
+  h1
+    position: relative
+    font-size: 52px
+    text-align: center
+    margin: 30px 0
+    margin-top: 70px
+    line-height: 1.8
+    font-weight: bolder
+    color: #555
+    // &:after
+    //   position: absolute
+    //   bottom: 0
+    //   left: 50%
+    //   margin-left: -25px
+    //   display: inline-block
+    //   content: ""
+    //   width: 50px
+    //   height: 4px
+    //   background-color: $c-primary
+
+.step-section
+  min-height: 300px
+  margin: 30px
+  font-size: 24px
+  color: #555
+  p
+    margin-bottom: 10px
+  strong
+    border-bottom: 2px solid $c-primary
+    color: #777
+    margin-right: 6px
+  &:after
+    display: table
+    content: ""
+    clear: both
+  h2
+    font-size: 28px
+    margin-bottom: 20px
+  .img
+    width: 40%
+    padding: 0 5%
+    > img
+      max-width: 100%
+  > .content
+    position: relative
+    width: 50%
+    padding-top: 100px
+    line-height: 1.6
+    font-size: 16px
+    &:before
+      position: absolute
+      display: inline-block
+      content: attr(title)
+      font-size: 48px
+      font-weight: bolder
+      padding: 0 10px
+      border-bottom: 6px solid $c-primary
+      line-height: 1
+      top: 30px
+      left: 0
+  &.left
+    .img
+      float: left
+    .content
+      float: right
+      &:before
+  &.right
+    .img
+      float: right
+    .content
+      float: left
+      &:before
+  > .content
+
+#call-to-action
+  margin-top: 150px
+  text-align: center
+  .cta
+    width: 300px
+
+.triangle-border
+  display: block
+  margin: 0 auto
+  width: 300px
+  line-height: 1.8
+  position: relative
+  margin-bottom: 30px
+  padding: 15px
+  border: 5px solid #5A8F00
+  color: #333
+  background: #FFF
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
+  &:before
+    content: ""
+    position: absolute
+    bottom: -20px
+    left: 40px
+    border-width: 20px 20px 0
+    border-style: solid
+    border-color: #5A8F00 rgba(0, 0, 0, 0)
+    display: block
+    width: 0
+
+footer
+  height: 60px
+  border-top: 1px solid #eee !important
+  margin-top: 100px !important
+  color: #ddd
+  h4
+    line-height: 60px
+    text-align: center
+    cursor: pointer
+    &:hover
+      color: #aaa

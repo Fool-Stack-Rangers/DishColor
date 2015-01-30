@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
+gem 'compass-rails'
 gem 'devise'
 gem 'devise-i18n'
 gem 'figaro', '>= 1.0.0.rc1'
