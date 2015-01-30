@@ -52,6 +52,11 @@ a.nav-login
 #hero
   +container
   padding: 80px 0
+  padding-bottom: 120px
+  &:after
+    display: table
+    content: ""
+    clear: both
 
 .hero-left
   width: 50%
@@ -96,3 +101,77 @@ a.nav-login
 // -------------------------------------
 //   STORY
 // -------------------------------------
+
+#story
+  min-height: 180px
+  background-color: $c-primary
+
+.story-content
+  +container
+  position: relative
+  padding-top: 40px
+  // &:before
+  //   display: block
+  //   content: ""
+  //   width: 100%
+  //   position: absolute
+  //   top: 0
+  //   height: 6px
+  //   border-radius: 2px
+  //   background-color: #EEE
+
+.story-dialog
+  position: relative
+  margin-bottom: 40px
+  &:after
+    display: table
+    content: ""
+    clear: both
+  > img
+    border-radius: 50%
+    max-width: 140px
+    height: 140px
+    float: left
+  &.left
+    text-align: left
+    > img
+      position: absolute
+      top: 0
+      left: 30px
+    > .desc
+      margin-left: 200px
+      &:after
+        left: -11px
+  &.right
+    text-align: right
+    > img
+      position: absolute
+      top: 0
+      right: 30px
+    > .desc
+      padding-top: 10px
+      margin-right: 200px
+      &:after
+        right: -11px
+  .desc
+    position: relative
+    // background-color: #FFF2CD
+    border-radius: 8px
+    padding: 20px 40px
+    margin: 40px 20px
+    // box-shadow: 1px 1px 0px #DDD
+    font-size: 24px
+    line-height: 1.5
+    // &:after
+    //   +rotate
+    //   position: absolute
+    //   display: block
+    //   content: ""
+    //   height: 20px
+    //   width: 20px
+    //   background-color: #FFF2CD
+    //   top: 15px
+
+#step
+  h1
+    font-size: 28px
