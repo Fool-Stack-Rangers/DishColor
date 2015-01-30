@@ -5,6 +5,8 @@
 
 $b-width: 960px
 $c-primary: #FFBA00
+$b-fontFamily-heading: "Open Sans", helvetica, arial, Hiragino Sans GB, "Heiti TC", "Microsoft YaHei", sans-serif
+$b-fontFamily-serif: Georgia, Cambria, "Times New Roman", Times, BiauKai, DFKai-sb, serif
 
 =container
   width: $b-width
@@ -12,6 +14,9 @@ $c-primary: #FFBA00
 
 button
   outline: none
+
+body
+  font-family: $b-fontFamily-heading
 
 .container
   +container
@@ -38,7 +43,7 @@ a.nav-login
   font-size: 16px
   float: right
   height: 32px
-  line-height: 32px
+  line-height: 30px
   margin: 10px 0
   cursor: pointer
   padding: 0 20px
@@ -55,6 +60,7 @@ a.nav-login
   height: 450px
   padding: 80px 0
   padding-bottom: 80px
+  font-family: $b-fontFamily-heading
   &:after
     display: table
     content: ""
@@ -112,6 +118,7 @@ a.cta
 #story
   min-height: 180px
   background-color: #fff
+  font-family: $b-fontFamily-heading
 
 .story-content
   +container
@@ -138,40 +145,64 @@ a.cta
   position: relative
   margin-bottom: 40px
   text-align: center
-  &:after
-    display: table
-    content: ""
-    clear: both
+  // &:after
+  //   display: table
+  //   content: ""
+  //   clear: both
+  &:before
+  //   position: absolute
+  //   top: 10px
+  //   left: 20px
+  //   color: #ccc
+  //   content: "'"
+  //   font-size: 4em
+  //   line-height: 0.1em
+  //   // margin-right: 0.25em
+  //   vertical-align: -0.4em
+  // &:after
+  //   position: absolute
+  //   top: 10px
+  //   right: 20px
+  //   color: #ccc
+  //   content: "'"
+  //   font-size: 4em
+  //   line-height: 0.1em
+  //   // margin-left: 0.25em
+  //   vertical-align: -0.4em
   > img
     border-radius: 50%
     max-width: 140px
     height: 140px
     float: left
-  &.left
-    > img
-      position: absolute
-      top: 0
-      left: 30px
-    > .desc
-      // margin-left: 200px
-      &:after
-        left: -11px
-  &.right
-    > img
-      position: absolute
-      top: 0
-      right: 30px
-    > .desc
-      padding-top: 10px
-      // margin-right: 200px
-      &:after
-        right: -11px
+  > .desc
+  // &.left
+  //   > img
+  //     position: absolute
+  //     top: 0
+  //     left: 30px
+  //   > .desc
+  //     // margin-left: 200px
+  //     &:after
+  //       left: -11px
+  // &.right
+  //   > img
+  //     position: absolute
+  //     top: 0
+  //     right: 30px
+  //   > .desc
+  //     padding-top: 10px
+  //     // margin-right: 200px
+  //     &:after
+  //       right: -11px
   .desc
     position: relative
     // background-color: #FFF2CD
     border-radius: 8px
     padding: 20px 40px
-    margin: 40px 20px
+    margin: 0px 20px
+    margin-bottom: 20px
+    padding-top: 0
+    padding-bottom: 40px
     // box-shadow: 1px 1px 0px #DDD
     font-size: 24px
     line-height: 1.5
