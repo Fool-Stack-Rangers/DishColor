@@ -1,5 +1,6 @@
-//= require_self
 //= require reset
+//= require_self
+//= require animations
 @import compass
 
 $b-width: 960px
@@ -25,7 +26,7 @@ button
   padding: 10px 0
   margin-right: 20px
   > img
-    width: 40px
+    // width: 40px
     height: 40px
 
 a.nav-login
@@ -36,11 +37,11 @@ a.nav-login
   background-color: rgba(0, 0, 0, 0)
   font-size: 16px
   float: right
-  height: 40px
-  line-height: 40px
+  height: 32px
+  line-height: 32px
   margin: 10px 0
   cursor: pointer
-  padding: 0 16px
+  padding: 0 20px
   &:hover
     box-shadow: 1px 1px 2px 1px #ddd
   &:active
@@ -51,8 +52,9 @@ a.nav-login
 // -------------------------------------
 #hero
   +container
+  height: 450px
   padding: 80px 0
-  padding-bottom: 120px
+  padding-bottom: 80px
   &:after
     display: table
     content: ""
@@ -71,23 +73,27 @@ a.nav-login
     line-height: 1.2
     color: #555
     margin-bottom: 30px
-  a.cta
-    +single-transition(all, 0.3s)
-    display: inline-block
-    border-radius: 4px
-    box-shadow: 0 2px 0 darken($c-primary, 5%)
+    small
+      font-size: 18px
+      line-height: 1.2
+
+a.cta
+  +single-transition(all, 0.3s)
+  display: inline-block
+  border-radius: 4px
+  box-shadow: 0 2px 0 darken($c-primary, 5%)
+  background-color: $c-primary
+  width: 200px
+  line-height: 50px
+  text-align: center
+  color: #fff
+  text-decoration: none
+  &:hover
+    background-color: lighten($c-primary, 10%)
+  &:active
+    margin-top: 2px
+    box-shadow: 0 0px 0 darken($c-primary, 5%)
     background-color: $c-primary
-    width: 200px
-    line-height: 50px
-    text-align: center
-    color: #fff
-    text-decoration: none
-    &:hover
-      background-color: lighten($c-primary, 10%)
-    &:active
-      margin-top: 2px
-      box-shadow: 0 0px 0 darken($c-primary, 5%)
-      background-color: $c-primary
 
 .hero-right
   position: relative
@@ -97,6 +103,7 @@ a.nav-login
 .hero-photo
   padding: 20px
   > img
+    width: 100%
 
 // -------------------------------------
 //   STORY
@@ -104,25 +111,33 @@ a.nav-login
 
 #story
   min-height: 180px
-  background-color: $c-primary
+  background-color: #fff
 
 .story-content
   +container
   position: relative
   padding-top: 40px
-  // &:before
-  //   display: block
-  //   content: ""
-  //   width: 100%
-  //   position: absolute
-  //   top: 0
-  //   height: 6px
-  //   border-radius: 2px
-  //   background-color: #EEE
+  color: #555
+  &:before,
+  &:after
+    display: block
+    content: ""
+    width: 60%
+    position: absolute
+    left: 50%
+    margin-left: -30%
+    height: 2px
+    border-radius: 2px
+    background-color: #EEE
+  &:before
+    top: -1px
+  &:after
+    bottom: -1px
 
 .story-dialog
   position: relative
   margin-bottom: 40px
+  text-align: center
   &:after
     display: table
     content: ""
@@ -133,24 +148,22 @@ a.nav-login
     height: 140px
     float: left
   &.left
-    text-align: left
     > img
       position: absolute
       top: 0
       left: 30px
     > .desc
-      margin-left: 200px
+      // margin-left: 200px
       &:after
         left: -11px
   &.right
-    text-align: right
     > img
       position: absolute
       top: 0
       right: 30px
     > .desc
       padding-top: 10px
-      margin-right: 200px
+      // margin-right: 200px
       &:after
         right: -11px
   .desc
@@ -173,5 +186,120 @@ a.nav-login
     //   top: 15px
 
 #step
+  +container
   h1
+    position: relative
+    font-size: 52px
+    text-align: center
+    margin: 30px 0
+    margin-top: 70px
+    line-height: 1.8
+    font-weight: bolder
+    color: #555
+    // &:after
+    //   position: absolute
+    //   bottom: 0
+    //   left: 50%
+    //   margin-left: -25px
+    //   display: inline-block
+    //   content: ""
+    //   width: 50px
+    //   height: 4px
+    //   background-color: $c-primary
+
+.step-section
+  min-height: 300px
+  margin: 30px
+  font-size: 24px
+  color: #555
+  p
+    margin-bottom: 10px
+  strong
+    border-bottom: 2px solid $c-primary
+    color: #777
+    margin-right: 6px
+  &:after
+    display: table
+    content: ""
+    clear: both
+  h2
     font-size: 28px
+    margin-bottom: 20px
+  .img
+    width: 40%
+    padding: 0 5%
+    > img
+      max-width: 100%
+  > .content
+    position: relative
+    width: 50%
+    padding-top: 100px
+    line-height: 1.6
+    font-size: 16px
+    &:before
+      position: absolute
+      display: inline-block
+      content: attr(title)
+      font-size: 48px
+      font-weight: bolder
+      padding: 0 10px
+      border-bottom: 6px solid $c-primary
+      line-height: 1
+      top: 30px
+      left: 0
+  &.left
+    .img
+      float: left
+    .content
+      float: right
+      &:before
+  &.right
+    .img
+      float: right
+    .content
+      float: left
+      &:before
+  > .content
+
+#call-to-action
+  margin-top: 150px
+  text-align: center
+  .cta
+    width: 300px
+
+.triangle-border
+  display: block
+  margin: 0 auto
+  width: 300px
+  line-height: 1.8
+  position: relative
+  margin-bottom: 30px
+  padding: 15px
+  border: 5px solid #5A8F00
+  color: #333
+  background: #FFF
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
+  &:before
+    content: ""
+    position: absolute
+    bottom: -20px
+    left: 40px
+    border-width: 20px 20px 0
+    border-style: solid
+    border-color: #5A8F00 rgba(0, 0, 0, 0)
+    display: block
+    width: 0
+
+footer
+  height: 60px
+  border-top: 1px solid #eee !important
+  margin-top: 100px !important
+  color: #ddd
+  h4
+    line-height: 60px
+    text-align: center
+    cursor: pointer
+    &:hover
+      color: #aaa
