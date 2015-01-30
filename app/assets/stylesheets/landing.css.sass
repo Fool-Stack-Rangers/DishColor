@@ -1,0 +1,98 @@
+//= require_self
+//= require reset
+@import compass
+
+$b-width: 960px
+$c-primary: #FFBA00
+
+=container
+  width: $b-width
+  margin: 0 auto
+
+button
+  outline: none
+
+.container
+  +container
+
+.nav
+  height: 60px
+  border-bottom: 1px solid #ddd
+
+.nav-logo
+  display: inline-block
+  max-width: 200px
+  padding: 10px 0
+  margin-right: 20px
+  > img
+    width: 40px
+    height: 40px
+
+a.nav-login
+  display: block
+  border: 2px solid #ccc
+  border-radius: 4px
+  color: #aaa
+  background-color: rgba(0, 0, 0, 0)
+  font-size: 16px
+  float: right
+  height: 40px
+  line-height: 40px
+  margin: 10px 0
+  cursor: pointer
+  padding: 0 16px
+  &:hover
+    box-shadow: 1px 1px 2px 1px #ddd
+  &:active
+    box-shadow: none
+
+// -------------------------------------
+//   HERO
+// -------------------------------------
+#hero
+  +container
+  padding: 80px 0
+
+.hero-left
+  width: 50%
+  margin-top: 30px
+  float: left
+  h1
+    font-size: 56px
+    line-height: 1.5
+    margin-bottom: 10px
+  .desc
+    font-size: 28px
+    line-height: 1.2
+    color: #555
+    margin-bottom: 30px
+  a.cta
+    +single-transition(all, 0.3s)
+    display: inline-block
+    border-radius: 4px
+    box-shadow: 0 2px 0 darken($c-primary, 5%)
+    background-color: $c-primary
+    width: 200px
+    line-height: 50px
+    text-align: center
+    color: #fff
+    text-decoration: none
+    &:hover
+      background-color: lighten($c-primary, 10%)
+    &:active
+      margin-top: 2px
+      box-shadow: 0 0px 0 darken($c-primary, 5%)
+      background-color: $c-primary
+
+.hero-right
+  position: relative
+  float: right
+  width: 50%
+
+.hero-photo
+  padding: 20px
+  > img
+
+// -------------------------------------
+//   STORY
+// -------------------------------------
