@@ -20,5 +20,12 @@
   <%= @recipe.photo_id %>
 </p>
 
-<%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<%= link_to 'Back', recipes_path %>
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @recipe.image.url %>
+<%= image_tag @recipe.image.url(:small) %>
+<%= image_tag @recipe.image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_user_recipe_path(current_user, @recipe) %> |
+<%#= link_to 'Back', user_recipes_path %>
