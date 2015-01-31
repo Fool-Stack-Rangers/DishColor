@@ -17,3 +17,5 @@
 //= require google_analytics
 //= require wheel
 //= require recommendation
+//= require handlebars.runtime
+//= require_tree ./templates
