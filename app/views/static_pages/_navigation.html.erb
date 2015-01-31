@@ -2,9 +2,9 @@
   <div class="container">
     <div class="nav-logo">
       <img src="/images/logo.png">
+    <div>
+      <%= link_to '註冊會員', new_user_registration_path , :class => "nav-login" %>
+    
+      <%= link_to '登入', new_user_session_path , :class => "nav-login" %>
     </div>
-    <a class="nav-login">
-      登入
-    </a>
-  </div>
 </div>

@@ -99,6 +99,8 @@ GEM
       bootstrap-sass (>= 3.1)
       sass (>= 3.2.0)
     fssm (0.2.10)
+    gauguin (0.0.3)
+      rmagick
     handlebars_assets (0.18)
       execjs (>= 1.2.9)
       multi_json
@@ -166,6 +168,7 @@ GEM
       json (~> 1.4)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
+    rmagick (2.13.4)
     rollbar (1.4.2)
       multi_json (~> 1.3)
     sass (3.2.19)
@@ -226,6 +229,7 @@ DEPENDENCIES
   devise-i18n
   figaro (>= 1.0.0.rc1)
   flat-ui-sass
+  gauguin
   handlebars_assets
   high_voltage
   jbuilder (~> 2.0)

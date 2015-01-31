@@ -19,3 +19,4 @@
 //= require google_analytics
 //= require wheel
 //= require recommendation
+//= require_fb

@@ -20,6 +20,7 @@ gem 'pg'
 gem 'rollbar', '~> 1.4.2'
 gem 'paperclip'
 gem 'handlebars_assets'
+gem 'gauguin'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]

@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   get 'recipes/:id', to: "recipes#show" , as: "recipes"
+
+  get 'get_dish/:colors',to: "recipes#getDish", defaults: { format: 'json' }
 end
