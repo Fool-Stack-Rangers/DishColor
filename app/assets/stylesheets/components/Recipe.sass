@@ -5,8 +5,13 @@
 //
 // *************************************
 
+$recipe-height: 240px
+
 .Recipe
-  height: 720px / 3
+  position: relative
+  height: $recipe-height
+  border: 1px solid #ddd
+  padding-left: $recipe-height
 
 // -------------------------------------
 //   Modifiers
@@ -24,4 +29,8 @@
 //   Scaffolding
 // -------------------------------------
 
-.Recipe--photo
+.Recipe-photo
+  position: absolute
+  height: $recipe-height
+  width: $recipe-height
+  left: 0
