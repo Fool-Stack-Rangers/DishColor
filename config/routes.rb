@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :recipes
+
   get 'static_pages/home'
 
   # root to: 'visitors#index'
