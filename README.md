@@ -3,11 +3,11 @@
 - 更好的創意料理，從挑選顏色開始。
 - [回報問題](https://github.com/Fool-Stack-Rangers/DishColor/issues)
 
-## System requires
+# System requires
 - Ruby 2.1.5
 - Rails 4.1.8
 
-## Credits
+# Credits
 - Otis    / [github](https://github.com/AnNOtis)
 - Ming    / [github](https://github.com/viflin)
 - Vincent / [github](https://github.com/dangjlin)
