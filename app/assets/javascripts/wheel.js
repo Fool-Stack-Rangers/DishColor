@@ -27,7 +27,7 @@
         edgeOffset : 10,//offset from edge of $this
         percentageInnerCutout : 75,
         animation : true,
-        animationSteps : 90,
+        animationSteps : 20,
         animationEasing : "easeInOutExpo",
         animateRotate : true,
         tipOffsetX: -8,
@@ -100,9 +100,12 @@
                      "margin-left": -(summarySize / 2) + "px",
                      "margin-top": -(summarySize / 2) + "px"
                    });
-    var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
+    var $callToClick = $("<button class='suggestion-btn' data-toggle='popover' data-placement='top' title='選擇你要的顏色' data-content='And heres some amazing content. It's very engaging. Right?'>新增顏色</button>").appendTo($summary);
+    // var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
     var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
-
+    $("#suggestion-btn").popover({
+      template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    });
     for (var i = 0, len = data.length; i < len; i++) {
       segmentTotal += data[i].value;
       $paths[i] = $(document.createElementNS('http://www.w3.org/2000/svg', 'path'))
@@ -149,7 +152,7 @@
     };
     function pathMouseEnter(e) {
       var order = $(this).data().order;
-      $tip.text(data[order].title + ": " + data[order].value)
+      $tip.text(data[order].title)
           .fadeIn(200);
       settings.onPathEnter.apply($(this),[e,data]);
     }
@@ -201,9 +204,12 @@
       }
     }
     function drawDoughnutText(animationDecimal, segmentTotal) {
+      // $summaryNumber
+      //   .css({opacity: animationDecimal})
+      //   .text((segmentTotal * animationDecimal).toFixed(1));
       $summaryNumber
         .css({opacity: animationDecimal})
-        .text((segmentTotal * animationDecimal).toFixed(1));
+        .text(data.length);
     }
     function animateFrame(cnt, drawData) {
       var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
@@ -236,6 +242,7 @@
       if (isNumber(minValue) && valueToCap < minValue) return minValue;
       return valueToCap;
     }
+
     return $this;
   };
 })(jQuery);

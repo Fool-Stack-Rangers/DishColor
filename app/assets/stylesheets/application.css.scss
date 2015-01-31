@@ -20,7 +20,12 @@
 @import "framework_and_overrides";
 @import "wheel";
 
-@import "recommendation/index";
+// -------------------------------------
+//   Foundations
+// -------------------------------------
+
+@import "foundations/config";
+@import "foundations/bootstrap_override";
 
 // -------------------------------------
 //   Components
@@ -29,3 +34,6 @@
 @import "components/DishResult";
 @import "components/ColorSelector";
 @import "components/Recipe";
+@import "components/AddColorBtn";
+
+@import "recommendation/index";
