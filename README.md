@@ -1,3 +1,7 @@
+
+![Alt text](https://raw.githubusercontent.com/Fool-Stack-Rangers/DishColor/master/public/images/yellow-logo.png "菜色")
+
+
 # DishColor
 - 官方網站 [菜色 (DishColor) ](http://dishcolor.com/)
 - 更好的創意料理，從挑選顏色開始。
