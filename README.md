@@ -9,7 +9,8 @@
 - Github
 - Capistrano
 
-# 3rd service
+# 3rd service
+- [NameCheap](https://www.namecheap.com/)
 - [Google Cloud Platform](https://cloud.google.com/)
 - [Google Webmasters Tool](https://www.google.com/webmasters/tools/)
 - [Google Analytics](https://www.google.com/analytics/web/)
