@@ -37,6 +37,7 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+
 namespace :deploy do
 
   desc 'Restart application'
@@ -48,9 +49,10 @@ namespace :deploy do
     end
   end
 
-  set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
-  set :rollbar_env, Proc.new { fetch :stage }
-  set :rollbar_role, Proc.new { :app }
+
+#  set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+#  set :rollbar_env, Proc.new { fetch :stage }
+#  set :rollbar_role, Proc.new { :app }
 
 
 #  task :notify_rollbar do
@@ -74,5 +76,18 @@ namespace :deploy do
     end
   end
 
+  after  "deploy:restart", "rollbar:notify"
+end
+
+namespace :rollbar do
+  task :notify, :roles => [:web] do
+    set :revision, `git log -n 1 --pretty=format:"%H"`
+    set :local_user, `whoami`
+    set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+    #set :rollbar_env, Proc.new { fetch :stage }
+    #set :rollbar_role, Proc.new { :app }
+    rails_env = fetch(:rails_env, 'production')
+    run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
+  end
 end
 
