@@ -48,7 +48,8 @@ namespace :deploy do
     end
   end
 
-  set :rollbar_token, '4ca2496ff5d945a2a73e0b1fe546857d'
+  #set :rollbar_token, '4ca2496ff5d945a2a73e0b1fe546857d'
+  set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
   set :rollbar_env, Proc.new { fetch :stage }
   set :rollbar_role, Proc.new { :app }
 
