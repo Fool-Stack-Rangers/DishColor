@@ -12,8 +12,9 @@
  *
  *= require_self
  */
-@import "bootstrap-sprockets";
 @import "flat-ui/variables";
+@import "bootstrap-sprockets";
 @import "bootstrap";
-@import "flat-ui";
+
+// @import "flat-ui";
 @import "framework_and_overrides";

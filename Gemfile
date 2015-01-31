@@ -10,7 +10,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
-gem 'flat-ui-sass', github: 'wingrunr21/flat-ui-sass'
+gem 'flat-ui-sass'
 gem 'compass-rails'
 gem 'devise'
 gem 'devise-i18n'
