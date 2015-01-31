@@ -7,7 +7,12 @@
 - Ruby 2.1.5
 - Rails 4.1.8
 - Github
-- Capistrano
+- [Capistrano](https://github.com/capistrano/capistrano)
+- [Gauguin](https://github.com/LunarLogic/gauguin)
+- [Paperclip](https://github.com/thoughtbot/paperclip)
+- [Devise](https://github.com/plataformatec/devise)
+- [Figaro](https://github.com/laserlemon/figaro)
+- [Bootstrap](http://getbootstrap.com/)
 
 # 3rd service
 - [NameCheap](https://www.namecheap.com/)
@@ -25,12 +30,6 @@
 - Vincent / [github](https://github.com/dangjlin)
 - Puff    / [github](https://github.com/puff-tw)
 
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
 License
 -------
-Please see the file called LICENSE.
+MIT
