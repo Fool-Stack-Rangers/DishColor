@@ -1,31 +1,31 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) %> |
+<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) %>
+
 <p>
-  <strong>Name:</strong>
+  <strong>料理名稱（食譜名稱）:</strong>
   <%= @recipe.name %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>料理說明（食材）:</strong>
   <%= @recipe.description %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @recipe.user_id %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @recipe.photo_id %>
+  <strong>上傳人:</strong>
+  <%= @recipe.user.name %>
 </p>
 
 <p>
   <strong>Photo:</strong>
 <%= image_tag @recipe.image.url %>
-<%= image_tag @recipe.image.url(:small) %>
-<%= image_tag @recipe.image.url(:thumb) %>
+<p>
+</p>
+<%# image_tag @recipe.image.url(:small) %>
+<%# image_tag @recipe.image.url(:thumb) %>
 </p>
 
-<%= link_to 'Edit', edit_user_recipe_path(current_user, @recipe) %> |
-<%#= link_to 'Back', user_recipes_path %>
+<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) %> |
+<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) %>
