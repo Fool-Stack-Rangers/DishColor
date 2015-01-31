@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require handlebars.runtime
+//= require_tree ./templates
 //= require bootstrap-sprockets
 //= require google_analytics
 //= require wheel
 //= require recommendation
-//= require handlebars.runtime
-//= require_tree ./templates

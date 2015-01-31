@@ -103,6 +103,19 @@ function markSelectedColors(){
   })
 }
 
+function saveForLater($recipe){
+  console.log($recipe)
+  var id = $recipe.attr('data-id');
+  var image_url = $recipe.find('img').attr('src');
+  var html = JST['recommendation/save_item']({image_url: image_url, id: id});
+  $('#SaveRiver .River-wrapper').append(html);
+}
+
+function fixRiverSize(){
+  var width =  ($('.River-recipe').length * ($('.River-recipe').width()+20 )) +"px";
+  $('.River-wrapper').css('width', width);
+}
+
 $(function(){
   $("#doughnutChart").drawDoughnutChart(colorRecord);
 
@@ -110,15 +123,24 @@ $(function(){
     resetColors();
   });
 
-  console.log('call');
   $("#suggestion-btn").click(function(){
-    console.log("!@#!@#!@#!@#");
     rotateWheel($("#doughnutChart").find('svg'));
   });
 
   $(document).on('click', '.AddColorBtn', function(){
-    color = $(this).attr('data-color')
-    toggleColor(color)
+    color = $(this).attr('data-color');
+    toggleColor(color);
   });
 
+  $(document).on('click', '.js-recipe-save', function(){
+    $recipe = $(this).parents('.Recipe');
+    saveForLater($recipe);
+    fixRiverSize();
+  });
+
+  $(document).on('click', '.js-recipe-delete', function(){
+    $recipe = $(this).parents('.River-recipe');
+    $recipe.remove();
+    fixRiverSize();
+  });
 });

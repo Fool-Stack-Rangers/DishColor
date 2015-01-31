@@ -1,0 +1,25 @@
+<div class="Recipe" data-id="{{id}}">
+  <div class="Recipe-photo">
+    <img src="{{image_url}}">
+  </div>
+  <div class="Recipe-info">
+    <h2>{{name}}</h2>
+    <div class="colors">
+      {{#if high}}
+        <span class="ColorSym {{high}}"></span>
+      {{/if}}
+      {{#if medium}}
+        <span class="ColorSym {{medium}}"></span>
+      {{/if}}
+      {{#if low}}
+        <span class="ColorSym {{low}}"></span>
+      {{/if}}
+    </div>
+    <div class="desc">
+      {{description}}
+    </div>
+  </div>
+  <div class="Recipe-checkbox">
+    <div class="cta js-recipe-save">儲存</div>
+  </div>
+</div>

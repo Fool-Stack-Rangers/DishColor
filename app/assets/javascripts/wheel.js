@@ -100,9 +100,9 @@
                      "margin-left": -(summarySize / 2) + "px",
                      "margin-top": -(summarySize / 2) + "px"
                    });
-    var $callToClick = $("<button class='suggestion-btn' data-toggle='popover' data-placement='top' title='選擇你要的顏色' data-content='And heres some amazing content. It's very engaging. Right?'>新增顏色</button>").appendTo($summary);
+    var $callToClick = $('<div class="colors-btn-group"><p><button class="AddColorBtn red"   data-color="red" data-id="0"></button> <button class="AddColorBtn yellow" data-color="yellow" data-id="1"></button> </p> <p> <button class="AddColorBtn green"   data-color="green" data-id="2"></button> <button class="AddColorBtn blue"   data-color="blue" data-id="3"></button> <button class="AddColorBtn brown" data-color="brown" data-id="4"></button> </p> <p> <button class="AddColorBtn black"   data-color="black" data-id="5"></button> <button class="AddColorBtn white"   data-color="white" data-id="6"></button> </p></div>').appendTo($summary);
     // var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
-    var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
+    // var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
     $("#suggestion-btn").popover({
       template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
     });
@@ -207,9 +207,9 @@
       // $summaryNumber
       //   .css({opacity: animationDecimal})
       //   .text((segmentTotal * animationDecimal).toFixed(1));
-      $summaryNumber
-        .css({opacity: animationDecimal})
-        .text(data.length);
+      // $summaryNumber
+      //   .css({opacity: animationDecimal})
+      //   .text(data.length);
     }
     function animateFrame(cnt, drawData) {
       var easeAdjustedAnimationPercent =(settings.animation)? CapValue(easingFunction(cnt), null, 0) : 1;
