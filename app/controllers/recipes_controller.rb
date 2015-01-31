@@ -2,7 +2,7 @@
   #layout "landing"
   before_action :authenticate_user!, :only => [:index, :new, :create, :edit,:update,:destroy]
   before_action :set_recipe, only: [:edit, :update, :destroy]
-  
+
   respond_to :html
 
   def index
@@ -49,34 +49,33 @@
     n=0
     datajson = []
     color = params[:colors]
-    Recipe.find_each do |recipe| 
-    
+    Recipe.find_each do |recipe|
       if color.include?(recipe.low)
-        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
                       :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
       elsif color.include?(recipe.medium)
-        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
                       :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
       elsif color.include?(recipe.high)
-        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
                       :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
       end
       n=n+1
     end
     redata = datajson.sample(5)
     respond_to do |format|
-            format.html
-            format.json {
-              render :json => redata  
-            }
+      format.html
+      format.json {
+        render :json => redata
+      }
     end
   end
-  
+
   private
     def set_recipe
        @user = current_user
-        if @user.recipes.find(params[:id]) != nil 
-          @recipe = @user.recipes.find(params[:id])        
+        if @user.recipes.find(params[:id]) != nil
+          @recipe = @user.recipes.find(params[:id])
         else
           redirect_to action: 'index'
         end

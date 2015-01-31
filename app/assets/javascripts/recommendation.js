@@ -13,7 +13,7 @@ function rotateWheel($elem){
     }
   }, 10)
 }
-function derotateWheel($elem){
+function derotateWheel($elem, callback){
   if(rotateInterval === undefined){
     return;
   }
@@ -23,7 +23,8 @@ function derotateWheel($elem){
   var stop_flag = 200;
   derotateInterval = setInterval(function(){
     if(stop_flag <= 0){
-      clearInterval(derotateInterval)
+      clearInterval(derotateInterval);
+      callback();
     }
     now = now - delta;
     $elem.css('-webkit-transform','rotate('+now+'deg)');
@@ -60,13 +61,13 @@ var colorRecord = [
 ];
 function toggleColor(color){
   var colorsInfo = {
-    "red": { id: 0   , title: "紅色", value:  40, color: "#FF0000" },
-    "yellow": { id: 1, title: "黃色", value:  40, color: "#FFFF00" },
-    "green": { id: 2 , title: "綠色", value:  40, color: "#00FF00" },
-    "blue": { id: 3  , title: "藍色", value:  40, color: "#0000FF" },
-    "brown": { id: 4 , title: "咖啡色", value: 40, color: "#4D3900" },
-    "black": { id: 5 , title: "黑色", value:  40, color: "#000000" },
-    "white": { id: 6 , title: "白色", value:  40, color: "#FFFFFF" }
+    "red": { name:"red", id: 0   , title: "紅色", value:  40, color: "#FF0000" },
+    "yellow": { name:"yellow", id: 1, title: "黃色", value:  40, color: "#FFFF00" },
+    "green": { name:"green", id: 2 , title: "綠色", value:  40, color: "#00FF00" },
+    "blue": { name:"blue", id: 3  , title: "藍色", value:  40, color: "#0000FF" },
+    "coffee": { name:"coffee", id: 4 , title: "咖啡色", value: 40, color: "#4D3900" },
+    "black": { name:"black", id: 5 , title: "黑色", value:  40, color: "#000000" },
+    "white": { name:"white", id: 6 , title: "白色", value:  40, color: "#FFFFFF" }
   }
 
   var target = colorsInfo[color];
@@ -103,8 +104,15 @@ function markSelectedColors(){
   })
 }
 
+function getColorsToUrl(){
+  var result = "";
+  for(i in colorRecord){
+    result += (colorRecord[i].name + ',');
+  }
+  return result;
+}
+
 function saveForLater($recipe){
-  console.log($recipe)
   var id = $recipe.attr('data-id');
   var image_url = $recipe.find('img').attr('src');
   var html = JST['recommendation/save_item']({image_url: image_url, id: id});
@@ -112,7 +120,7 @@ function saveForLater($recipe){
 }
 
 function fixRiverSize(){
-  var width =  ($('.River-recipe').length * ($('.River-recipe').width()+20 )) +"px";
+  var width =  ($('.River-recipe').length * ($('.River-recipe').css('width')+21 )) +"px";
   $('.River-wrapper').css('width', width);
 }
 
@@ -125,6 +133,22 @@ $(function(){
 
   $("#suggestion-btn").click(function(){
     rotateWheel($("#doughnutChart").find('svg'));
+    var params = getColorsToUrl();
+    $.ajax({
+      url: "/get_dish/"+params,
+      method: 'get'
+    }).done(function(data){
+      derotateWheel($("#doughnutChart").find('svg'), function(){
+        $('.DishResult').html('');
+        $.each(data, function(index, recipe){
+          var html = JST['recommendation/recipe'](recipe);
+          $('.DishResult').append(html);
+        })
+
+      });
+    }).fail(function(){
+
+    })
   });
 
   $(document).on('click', '.AddColorBtn', function(){

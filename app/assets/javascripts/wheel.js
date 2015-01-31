@@ -100,7 +100,7 @@
                      "margin-left": -(summarySize / 2) + "px",
                      "margin-top": -(summarySize / 2) + "px"
                    });
-    var $callToClick = $('<div class="colors-btn-group"><p><button class="AddColorBtn red"   data-color="red" data-id="0"></button> <button class="AddColorBtn yellow" data-color="yellow" data-id="1"></button> </p> <p> <button class="AddColorBtn green"   data-color="green" data-id="2"></button> <button class="AddColorBtn blue"   data-color="blue" data-id="3"></button> <button class="AddColorBtn brown" data-color="brown" data-id="4"></button> </p> <p> <button class="AddColorBtn black"   data-color="black" data-id="5"></button> <button class="AddColorBtn white"   data-color="white" data-id="6"></button> </p></div>').appendTo($summary);
+    var $callToClick = $('<div class="colors-btn-group"><p><button class="AddColorBtn red"   data-color="red" data-id="0"></button> <button class="AddColorBtn yellow" data-color="yellow" data-id="1"></button> </p> <p> <button class="AddColorBtn green"   data-color="green" data-id="2"></button> <button class="AddColorBtn blue"   data-color="blue" data-id="3"></button> <button class="AddColorBtn coffee" data-color="coffee" data-id="4"></button> </p> <p> <button class="AddColorBtn black"   data-color="black" data-id="5"></button> <button class="AddColorBtn white"   data-color="white" data-id="6"></button> </p></div>').appendTo($summary);
     // var $summaryTitle = $('<p class="' + settings.summaryTitleClass + '">' + settings.summaryTitle + '</p>').appendTo($summary);
     // var $summaryNumber = $('<p class="' + settings.summaryNumberClass + '"></p>').appendTo($summary).css({opacity: 0});
     $("#suggestion-btn").popover({
