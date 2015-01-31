@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+ # resources :recipes
+
   get 'static_pages/home'
 
   # root to: 'visitors#index'
   root to: 'static_pages#show'
   devise_for :users
-  resources :users
+  resources :users do 
+    resources :recipes, except:[:show]
+  end
+
+  get 'recipes/:id', to: "recipes#show" , as: "recipes" 
 end

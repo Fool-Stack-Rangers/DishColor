@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @recipe.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @recipe.user_id %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= @recipe.photo_id %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @recipe.image.url %>
+<%= image_tag @recipe.image.url(:small) %>
+<%= image_tag @recipe.image.url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_user_recipe_path(current_user, @recipe) %> |
+<%#= link_to 'Back', user_recipes_path %>
