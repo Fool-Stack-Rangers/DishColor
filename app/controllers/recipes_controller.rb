@@ -26,12 +26,15 @@ class RecipesController < ApplicationController
     @user = current_user
     @recipe = @user.recipes.build(recipe_params)
     flash[:notice] = 'Recipe was successfully created.' if @recipe.save
-    respond_with(current_user,@recipe)
+    redirect_to action: "show" , id: @recipe.id
+
+  #  respond_with(current_user,@recipe)
   end
 
   def update
     flash[:notice] = 'Recipe was successfully updated.' if @recipe.update(recipe_params)
-    respond_with(current_user,@recipe)
+    redirect_to action: "show" , id: @recipe.id
+  #  respond_with(current_user,@recipe)
   end
 
   def destroy
