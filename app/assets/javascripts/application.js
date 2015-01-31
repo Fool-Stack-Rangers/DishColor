@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require google_analytics
-//= require_tree .
+//= require_fb
