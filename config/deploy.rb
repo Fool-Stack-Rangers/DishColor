@@ -76,7 +76,6 @@ namespace :deploy do
     end
   end
 
-  after  "deploy:restart", "rollbar:notify"
 end
 
 namespace :rollbar do
@@ -91,3 +90,4 @@ namespace :rollbar do
   end
 end
 
+after  "deploy:restart", "rollbar:notify"
