@@ -1,2 +1,11 @@
 body
   font-family: $b-fontFamily-heading
+
+.navbar-inverse
+  background-color: $c-primary
+  border-bottom: 2px solid darken($c-primary, 10%)
+  border-color: darken($c-primary, 10%)
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus
+  color: #fff
+  background-color: darken($c-primary, 5%)

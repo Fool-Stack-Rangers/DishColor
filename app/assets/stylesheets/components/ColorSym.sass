@@ -6,10 +6,18 @@
 // *************************************
 
 .ColorSym
-  display: inline
-  width: 20px
-  height: 10px
+  +color_children
+  +box-shadow(0 -7px 0 0 rgba(0, 0, 0, 0.1) inset)
+  display: inline-block
+  width: 30px
+  height: 16px
   box-shadow: 0
+  line-height: 0
+  margin-right: 8px
+  border-radius: 4px
+  cursor: pointer
+  &:hover
+    box-shadow
 
 // -------------------------------------
 //   Modifiers

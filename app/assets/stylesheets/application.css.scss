@@ -10,8 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require foundations/animate
  *= require_self
  */
+@import "compass";
 @import "flat-ui/variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -25,6 +27,7 @@
 // -------------------------------------
 
 @import "foundations/config";
+@import "foundations/mixins";
 @import "foundations/bootstrap_override";
 
 // -------------------------------------
@@ -35,5 +38,8 @@
 @import "components/ColorSelector";
 @import "components/Recipe";
 @import "components/AddColorBtn";
+@import "components/ColorSym";
+@import "components/cta";
+@import "components/River";
 
 @import "recommendation/index";

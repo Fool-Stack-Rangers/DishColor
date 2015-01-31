@@ -16,3 +16,4 @@
 //= require bootstrap-sprockets
 //= require google_analytics
 //= require wheel
+//= require recommendation

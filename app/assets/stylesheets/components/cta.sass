@@ -1,0 +1,30 @@
+$c-reset: #34495E
+
+a.cta,
+.cta
+  +single-transition(all, 0.1s)
+  display: inline-block
+  border-radius: 4px
+  box-shadow: 0 2px 0 darken($c-primary, 5%)
+  background-color: $c-primary
+  // width: 200px
+  line-height: 50px
+  text-align: center
+  color: #fff
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    background-color: lighten($c-primary, 10%)
+  &:active
+    margin-top: 2px
+    box-shadow: 0 0px 0 darken($c-primary, 5%)
+    background-color: $c-primary
+
+.cta--reset
+  background-color: $c-reset
+  box-shadow: 0 2px 0 darken($c-reset, 5%)
+  &:hover
+    background-color: lighten($c-reset, 10%)
+  &:active
+    box-shadow: 0 0px 0 darken($c-reset, 5%)
+    background-color: $c-reset
