@@ -48,6 +48,10 @@ namespace :deploy do
     end
   end
 
+  set :rollbar_token, '4ca2496ff5d945a2a73e0b1fe546857d'
+  set :rollbar_env, Proc.new { fetch :stage }
+  set :rollbar_role, Proc.new { :app }
+
   # task :notify_rollbar do
   #   on roles(:app) do |h|
   #     revision = `git log -n 1 --pretty=format:"%H"`

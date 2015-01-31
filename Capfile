@@ -8,9 +8,9 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 
 require 'rollbar/capistrano3'
-set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
-set :rollbar_env, Proc.new { fetch :stage }
-set :rollbar_role, Proc.new { :app }
+#set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+#set :rollbar_env, Proc.new { fetch :stage }
+#set :rollbar_role, Proc.new { :app }
 
 # Includes tasks from other gems included in your Gemfile
 #
