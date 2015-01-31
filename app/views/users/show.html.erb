@@ -1,3 +1,4 @@
 <h3>User</h3>
 <p>Name: <%= @user.name if @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
+<p> <%= link_to "上傳你的食材或料理照片", new_user_recipe_path(@user) %> </p>

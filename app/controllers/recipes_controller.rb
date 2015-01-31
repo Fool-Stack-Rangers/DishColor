@@ -1,4 +1,5 @@
 class RecipesController < ApplicationController
+  #layout "landing"
   before_action :authenticate_user!, :only => [:index, :new, :create, :edit,:update,:destroy]
   before_action :set_recipe, only: [:edit, :update, :destroy]
   
@@ -20,11 +21,13 @@ class RecipesController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
     @user = current_user
     @recipe = @user.recipes.build(recipe_params)
+
     flash[:notice] = 'Recipe was successfully created.' if @recipe.save
     redirect_to action: "show" , id: @recipe.id
 
@@ -34,7 +37,7 @@ class RecipesController < ApplicationController
   def update
     flash[:notice] = 'Recipe was successfully updated.' if @recipe.update(recipe_params)
     redirect_to action: "show" , id: @recipe.id
-  #  respond_with(current_user,@recipe)
+   #respond_with(current_user,@recipe)
   end
 
   def destroy
@@ -53,6 +56,6 @@ class RecipesController < ApplicationController
     end
 
     def recipe_params
-      params.require(:recipe).permit(:id, :name, :description, :user_id, :image_id, :image)
+      params.require(:recipe).permit(:id, :name, :description, :user_id, :photo_id, :image)
     end
 end
