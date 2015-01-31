@@ -51,14 +51,16 @@ namespace :deploy do
   set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
   set :rollbar_env, Proc.new { fetch :stage }
   set :rollbar_role, Proc.new { :app }
-  task :notify_rollbar do
-    on roles(:app) do |h|
-        revision = `git log -n 1 --pretty=format:"%H"`
-        local_user = `whoami`
-        execute "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
-      end
-  end
-  after :deploy, 'notify_rollbar'
+
+
+#  task :notify_rollbar do
+#    on roles(:app) do |h|
+#        revision = `git log -n 1 --pretty=format:"%H"`
+#        local_user = `whoami`
+#        execute "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
+#      end
+#  end
+#  after :deploy, 'notify_rollbar'
 
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
