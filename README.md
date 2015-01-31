@@ -1,30 +1,19 @@
-Fr Template
-================
+# DishColor
+- 官方網站 [菜色 (DishColor) ](http://dishcolor.com/)
+- 更好的創意料理，從挑選顏色開始。
+- [回報問題](https://github.com/Fool-Stack-Rangers/DishColor/issues)
 
-This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
-provided by the [RailsApps Project](http://railsapps.github.io/).
+# System requires
+- Ruby 2.1.5
+- Rails 4.1.8
 
-Rails Composer is open source and supported by subscribers. Please join RailsApps to support development of Rails Composer.
+# Credits
+- Otis    / [github](https://github.com/AnNOtis)
+- Ming    / [github](https://github.com/viflin)
+- Vincent / [github](https://github.com/dangjlin)
+- Puff    / [github](https://github.com/puff-tw)
 
-Problems? Issues?
------------
 
-Need help? Ask on Stack Overflow with the tag 'railsapps.'
-
-Your application contains diagnostics in the README file. Please provide a copy of the README file when reporting any issues.
-
-If the application doesn't work as expected, please [report an issue](https://github.com/RailsApps/rails_apps_composer/issues)
-and include the diagnostics.
-
-Ruby on Rails
--------------
-
-This application requires:
-
-- Ruby 2.1.1
-- Rails 4.1.7
-
-Learn more about [Installing Rails](http://railsapps.github.io/installing-rails.html).
 
 Getting Started
 ---------------
@@ -32,17 +21,14 @@ Getting Started
 Documentation and Support
 -------------------------
 
-Issues
--------------
-
-Similar Projects
-----------------
-
 Contributing
 ------------
+
 
 Credits
 -------
 
+
 License
 -------
+MIT License
