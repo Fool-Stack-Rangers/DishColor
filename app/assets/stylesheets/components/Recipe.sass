@@ -1,0 +1,67 @@
+// *************************************
+//
+//   Recipe
+//   -> description.
+//
+// *************************************
+
+$recipe-height: 160px
+
+.Recipe
+  +box-shadow(0 -2px 0 0 #DDD inset)
+  position: relative
+  height: $recipe-height
+  margin-bottom: 20px
+  border-radius: 6px
+  background-color: #FFF
+  overflow: hidden
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.Recipe-photo
+  position: absolute
+  height: $recipe-height
+  width: $recipe-height
+  left: 0
+
+.Recipe-info
+  margin-left: $recipe-height
+  margin-right: 100px
+  padding-left: 10px
+  padding-right: 10px
+  padding-bottom: 16px
+  h2
+    margin: 0
+    font-size: 28px
+    line-height: 1.5
+    padding-top: 0.7em
+    // padding-bottom: 0.3em
+  .desc
+    font-size: 14px
+
+.Recipe-checkbox
+  position: absolute
+  right: 0
+  top: 0
+  height: 100%
+  .cta
+    position: absolute
+    bottom: 20px
+    width: 80%
+    margin: 0 auto
+    line-height: 1.8
+  width: 100px

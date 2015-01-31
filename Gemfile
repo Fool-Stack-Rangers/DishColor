@@ -19,6 +19,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'rollbar', '~> 1.4.2'
 gem 'paperclip'
+gem 'handlebars_assets'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
@@ -29,6 +30,7 @@ group :development do
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'xray-rails'
 end
 group :development, :test do
   gem 'pry-rails'

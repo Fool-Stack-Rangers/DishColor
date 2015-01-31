@@ -1,0 +1,70 @@
+// *************************************
+//
+//   River
+//   -> .
+//
+// *************************************
+
+.River
+  position: fixed
+  bottom: 0
+  background-color: #333
+  width: 100%
+  padding: 16px 20px
+  overflow-x: scroll
+  padding-right: 100px
+
+// -------------------------------------
+//   Modifiers
+// -------------------------------------
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// -------------------------------------
+//   Context
+// -------------------------------------
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+.River-wrapper
+  display: block
+  height: 80px
+  width: 100%
+
+.River-recipe
+  position: relative
+  display: inline-block
+  height: 100%
+  margin-right: 20px
+  > img
+    max-height: 100%
+
+.River-delete
+  position: absolute
+  display: none
+  right: -3px
+  top: -3px
+  font-size: 16px
+  background-color: #fff
+  width: 16px
+  line-height: 16px
+  text-align: center
+  border-radius: 50%
+  cursor: pointer
+
+.River-recipe:hover .River-delete
+  display: block
+
+.River-gogo
+  position: fixed
+  right: 0
+  bottom: 0
+  height: 70px
+  margin: 20px
+  line-height: 70px
+  padding: 0 20px
+  color: #333
