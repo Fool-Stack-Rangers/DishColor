@@ -27,6 +27,7 @@ group :development do
   gem 'capistrano-rbenv', github: "capistrano/rbenv"
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem 'xray-rails'
 end
 group :development, :test do
   gem 'pry-rails'

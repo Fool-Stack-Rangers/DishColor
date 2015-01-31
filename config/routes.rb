@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'recommendation/index'
+
   get 'static_pages/home'
 
   # root to: 'visitors#index'
