@@ -75,8 +75,9 @@ namespace :deploy do
       # end
     end
   end
-
 end
+
+after "deploy:restart", "rollbar:notify"
 
 namespace :rollbar do
   task :notify, :roles => [:web] do
@@ -90,4 +91,4 @@ namespace :rollbar do
   end
 end
 
-after  "deploy:restart", "rollbar:notify"
+
