@@ -6,6 +6,17 @@
 # System requires
 - Ruby 2.1.5
 - Rails 4.1.8
+- Github
+- Capistrano
+
+# 3rd service
+- [Google Cloud Platform](https://cloud.google.com/)
+- [Google Webmasters Tool](https://www.google.com/webmasters/tools/)
+- [Google Analytics](https://www.google.com/analytics/web/)
+- [Trello](https://trello.com/)
+- [Hackpad](https://hackpad.com/)
+- [Slack](https://slack.com/)
+- [Rollbar](https://rollbar.com/)
 
 # Credits
 - Otis    / [github](https://github.com/AnNOtis)
