@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+  class RecipesController < ApplicationController
   #layout "landing"
   before_action :authenticate_user!, :only => [:index, :new, :create, :edit,:update,:destroy]
   before_action :set_recipe, only: [:edit, :update, :destroy]
@@ -45,6 +45,33 @@ class RecipesController < ApplicationController
     respond_with(current_user,@recipe)
   end
 
+  def getDish
+    n=0
+    datajson = []
+    color = params[:colors]
+    Recipe.find_each do |recipe| 
+    
+      if color.include?(recipe.low)
+        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
+      elsif color.include?(recipe.medium)
+        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
+      elsif color.include?(recipe.high)
+        datajson << {:name => recipe.name, :description => recipe.description, :url => recipe.image,
+                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
+      end
+      n=n+1
+    end
+
+    respond_to do |format|
+            format.html
+            format.json {
+              render :json => datajson  
+            }
+    end
+  end
+  
   private
     def set_recipe
        @user = current_user
