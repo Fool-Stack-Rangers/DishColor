@@ -59,6 +59,7 @@ namespace :deploy do
     end
   end
 
+  after :deploy, 'notify_rollbar'
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
@@ -70,7 +71,6 @@ namespace :deploy do
       # end
     end
   end
-  after :deploy, 'notify_rollbar'
 
 end
 
