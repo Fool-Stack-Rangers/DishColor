@@ -63,11 +63,11 @@
       end
       n=n+1
     end
-
+    redata = datajson.sample(5)
     respond_to do |format|
             format.html
             format.json {
-              render :json => datajson  
+              render :json => redata  
             }
     end
   end
