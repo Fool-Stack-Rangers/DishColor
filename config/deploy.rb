@@ -64,6 +64,18 @@ namespace :deploy do
 #  end
 #  after :deploy, 'notify_rollbar'
 
+  task :notify, :roles => [:web] do
+    set :revision, `git log -n 1 --pretty=format:"%H"`
+    set :local_user, `whoami`
+    set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+    #set :rollbar_env, Proc.new { fetch :stage }
+    #set :rollbar_role, Proc.new { :app }
+    rails_env = fetch(:rails_env, 'production')
+    run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
+  end
+  after :deploy, 'notify'
+
+
   after :publishing, :restart
   after :finishing, 'deploy:cleanup'
 
@@ -77,18 +89,18 @@ namespace :deploy do
   end
 end
 
-after "deploy:restart", "rollbar:notify"
+#after "deploy:restart", "rollbar:notify"
 
-namespace :rollbar do
-  task :notify, :roles => [:web] do
-    set :revision, `git log -n 1 --pretty=format:"%H"`
-    set :local_user, `whoami`
-    set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
-    #set :rollbar_env, Proc.new { fetch :stage }
-    #set :rollbar_role, Proc.new { :app }
-    rails_env = fetch(:rails_env, 'production')
-    run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
-  end
-end
+# namespace :rollbar do
+#   task :notify, :roles => [:web] do
+#     set :revision, `git log -n 1 --pretty=format:"%H"`
+#     set :local_user, `whoami`
+#     set :rollbar_token, ENV['ROLLBAR_ACCESS_TOKEN']
+#     #set :rollbar_env, Proc.new { fetch :stage }
+#     #set :rollbar_role, Proc.new { :app }
+#     rails_env = fetch(:rails_env, 'production')
+#     run "curl https://api.rollbar.com/api/1/deploy/ -F access_token=#{rollbar_token} -F environment=#{rails_env} -F revision=#{revision} -F local_username=#{local_user} >/dev/null 2>&1", :once => true
+#   end
+# end
 
 
