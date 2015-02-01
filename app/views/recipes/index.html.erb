@@ -3,8 +3,8 @@
 
   <% @recipes.each do |r| %>
     <div class="Recipe" data-id="<%= r.id %>">
-      <div class="Recipe-photo">
-        <img src="<%= r.image %>">
+      <div class="Recipe-photo" style="background-image:url(<%= r.image %>)">
+        <img src="<%= r.image %>" style="opacity:0;">
       </div>
       <div class="Recipe-info" >
         <h2><%= link_to r.name, recipes_path(r.id)%></h2>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="Recipe-checkbox">
-        
+
           <%= link_to '食譜細節', recipes_path(r), class: 'cta'%>
           <%= link_to '編輯食譜', edit_user_recipe_path(current_user, r), class: 'cta'%>
           <%= link_to '刪除食譜', user_recipe_path(current_user, r), method: :delete, data: { confirm: 'Are you sure?' } , class: 'cta' %>
@@ -28,4 +28,4 @@
 
 
 
-  <%= link_to '新增我的創意料理', new_user_recipe_path %>
+  <%= link_to '+ 新增我的創意料理', new_user_recipe_path %>
