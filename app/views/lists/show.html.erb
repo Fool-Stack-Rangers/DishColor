@@ -7,7 +7,7 @@
         <img src="<%= r.image %>">
       </div>
       <div class="Recipe-info">
-        <h2><%= r.name %></h2>
+        <h2><%= link_to r.name, recipes_path(r.id)%></h2>
         <div class="colors">
           <span class="ColorSym <%= r.high %>"></span>
           <span class="ColorSym <%= r.medium %>"></span>
