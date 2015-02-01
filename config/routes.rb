@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'recommendation/index', as: "recommendation"
+  authenticated :user do
+    root to: 'recommendation#index', as: :recommendation
+  end
+  root to: 'static_pages#show'
+
   get 'static_pages/home'
 
   # root to: 'visitors#index'
-  root to: 'static_pages#show'
   devise_for :users
   resources :users do
     resources :recipes, except:[:show]

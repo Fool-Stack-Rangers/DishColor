@@ -1,4 +1,5 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
 <div class="col-md-12" style="text-align: center; padding:2px;margin:10px auto;">
 	<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) ,:class=>"cta"%> |
@@ -40,3 +41,4 @@
 	<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) ,:class=>"cta"%> |
 	<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) ,:class=>"cta"%>
 </div>
+

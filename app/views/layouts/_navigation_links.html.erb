@@ -1,11 +1,12 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'About', page_path('about') %></li>
 <% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+  <li><%= link_to '新增創意料理', new_user_recipe_path(current_user) %></li>
+  <li><%= link_to '我的創意料理', user_recipes_path(current_user) %></li>
+  <li><%#= link_to 'Edit account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
+  <li><%= link_to '登入', new_user_session_path %></li>
+  <!-- <li><%= link_to 'Sign up', new_user_registration_path %></li> -->
 <% end %>
 <% if user_signed_in? %>
   <% if current_user.admin? %>

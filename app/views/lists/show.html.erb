@@ -1,1 +1,36 @@
-<h1>TESTESTESETSETSET</h1>
+<div class="container">
+  <h1>今日菜色</h1>
+
+  <% @list.recipes.each do |r| %>
+    <div class="Recipe" data-id="<%= r.id %>">
+      <div class="Recipe-photo">
+        <img src="<%= r.image %>">
+      </div>
+      <div class="Recipe-info">
+        <h2><%= r.name %></h2>
+        <div class="colors">
+          <span class="ColorSym <%= r.high %>"></span>
+          <span class="ColorSym <%= r.medium %>"></span>
+          <span class="ColorSym <%= r.low %>"></span>
+        </div>
+        <div class="desc">
+          <%= r.description.truncate(100) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<style type="text/css">
+
+</style>
+  <div class="raw">
+    <%= link_to new_user_recipe_path(current_user) do %>
+    <span class="cta cta--share pull-right">
+      <p>分享您的</p><p>創意料理</p>
+    </span>
+    <% end %>
+    <span class="triangle-border pull-right">
+      <p>我也做了一樣創意料理，該找誰分享我的料理呢....</p>
+    </span>
+  </div>
+</div>
+

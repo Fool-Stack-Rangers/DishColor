@@ -1,10 +1,12 @@
 $c-reset: #34495E
+$c-hint: #FDF6E3
 
 a.cta,
 .cta
   +single-transition(all, 0.1s)
   display: inline-block
   border-radius: 4px
+  border: none
   box-shadow: 0 2px 0 darken($c-primary, 5%)
   background-color: $c-primary
   // width: 200px
@@ -28,3 +30,11 @@ a.cta,
   &:active
     box-shadow: 0 0px 0 darken($c-reset, 5%)
     background-color: $c-reset
+
+.cta--share
+  padding: 20px
+  &:hover
+  &:active
+  p
+    line-height: 1.5
+    margin: 0
