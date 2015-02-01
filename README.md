@@ -3,6 +3,7 @@
 
 
 # DishColor
+> 用顏色、找菜色
 - 官方網站 [菜色 (DishColor) ](http://dishcolor.com/)
 - 更好的創意料理，從挑選顏色開始。
 - [回報問題](https://github.com/Fool-Stack-Rangers/DishColor/issues)
@@ -10,13 +11,15 @@
 # System requirement
 - Ruby 2.1.5
 - Rails 4.1.8
-- Github
 - [Capistrano](https://github.com/capistrano/capistrano)
 - [Gauguin](https://github.com/LunarLogic/gauguin)
 - [Paperclip](https://github.com/thoughtbot/paperclip)
 - [Devise](https://github.com/plataformatec/devise)
 - [Figaro](https://github.com/laserlemon/figaro)
-- [Bootstrap](http://getbootstrap.com/)
+- [Bootstrap 3.3.0](http://getbootstrap.com/)
+- [SVG Chart](http://codepen.io/githiro/pen/ICfFE)
+- [Flat UI](http://designmodo.github.io/Flat-UI/)
+- [Animate.css](http://daneden.github.io/animate.css/)
 
 # 3rd service
 - [NameCheap](https://www.namecheap.com/)
@@ -28,7 +31,7 @@
 - [Slack](https://slack.com/)
 - [Rollbar](https://rollbar.com/)
 
-# Collaborators
+# Contributors
 - Otis    / [github](https://github.com/AnNOtis)
 - Ming    / [github](https://github.com/viflin)
 - Vincent / [github](https://github.com/dangjlin)
