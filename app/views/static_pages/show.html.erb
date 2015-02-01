@@ -6,7 +6,7 @@
       <small>以往每一餐的食材，吃不完卻不曉得要如何處理，逃離不了廚餘的命運。</small>
       <small>但自從用了菜色之後...</small>
     </div>
-    <a class="cta btn" href="#">用顏色，找菜色</a>
+    <%= link_to '用顏色，找菜色', new_user_session_path, class: 'cta btn' %>
   </div>
   <div class="hero-right animatedParent animateOnce" data-appear-top-offset>
     <div class="hero-photo animated slow fadeIn">
@@ -71,5 +71,5 @@
     <p>看著冰箱內的食材，總是沒有想法....</p>
     <p>該怎麼做出一道色香味俱全的菜呢？</p>
   </div>
-  <a href="" class="cta">立即開始，打造創意菜色</a>
+  <%= link_to '立即開始，打造創意菜色', new_user_session_path, class: 'cta' %>
 </div>
