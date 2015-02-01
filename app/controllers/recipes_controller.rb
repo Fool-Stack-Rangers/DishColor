@@ -62,7 +62,7 @@
       end
       n=n+1
     end
-    redata = datajson.sample(5)
+    redata = datajson.sample(3)
     respond_to do |format|
       format.html
       format.json {
