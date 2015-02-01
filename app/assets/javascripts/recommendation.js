@@ -111,12 +111,21 @@ function getColorsToUrl(){
   }
   return result;
 }
+function updateListForm(){
+  var result = '';
+  $('.River-recipe').each(function(){
+    result += ($(this).attr('data-id') + ',');
+  })
+  $('#recipe_ids').val(result);
+  return result;
+}
 
 function saveForLater($recipe){
   var id = $recipe.attr('data-id');
   var image_url = $recipe.find('img').attr('src');
   var html = JST['recommendation/save_item']({image_url: image_url, id: id});
   $('#SaveRiver .River-wrapper').append(html);
+  updateListForm();
 }
 
 function fixRiverSize(){
@@ -165,6 +174,7 @@ $(function(){
   $(document).on('click', '.js-recipe-delete', function(){
     $recipe = $(this).parents('.River-recipe');
     $recipe.remove();
+    updateListForm();
     fixRiverSize();
   });
 });

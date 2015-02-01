@@ -1,8 +1,9 @@
 <div id="SaveRiver" class="River">
   <div class="River-wrapper">
   </div>
-  <div class="River-gogo cta">
-  <strong>親自下廚</strong>
-  <strong>大顯身手</strong>
-  </div>
+  <%= form_tag lists_path, method: :post do%>
+    <%= hidden_field_tag 'recipe_ids' %>
+    <%= submit_tag '親自下廚，大顯身手', class: 'River-gogo cta' %>
+  <% end %>
+  <!-- <div class="River-gogo cta"> -->
 </div>

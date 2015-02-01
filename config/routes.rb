@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :recipes, except:[:show]
   end
 
+  resources :lists, only:[:index, :show, :create]
+
   get 'recipes/:id', to: "recipes#show" , as: "recipes"
 
   get 'get_dish/:colors',to: "recipes#getDish", defaults: { format: 'json' }

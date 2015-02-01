@@ -17,14 +17,14 @@ ActiveRecord::Schema.define(version: 20150131204556) do
   enable_extension "plpgsql"
 
   create_table "list_recipe_ships", force: true do |t|
-    t.integer  "list_id_id"
-    t.integer  "recipe_id_id"
+    t.integer  "list_id"
+    t.integer  "recipe_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "list_recipe_ships", ["list_id_id"], name: "index_list_recipe_ships_on_list_id_id", using: :btree
-  add_index "list_recipe_ships", ["recipe_id_id"], name: "index_list_recipe_ships_on_recipe_id_id", using: :btree
+  add_index "list_recipe_ships", ["list_id"], name: "index_list_recipe_ships_on_list_id", using: :btree
+  add_index "list_recipe_ships", ["recipe_id"], name: "index_list_recipe_ships_on_recipe_id", using: :btree
 
   create_table "lists", force: true do |t|
     t.integer  "user_id"

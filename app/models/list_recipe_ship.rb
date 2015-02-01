@@ -1,4 +1,4 @@
 class ListRecipeShip < ActiveRecord::Base
-  belongs_to :list_id
-  belongs_to :recipe_id
+  belongs_to :list
+  belongs_to :recipe
 end
