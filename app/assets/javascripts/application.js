@@ -19,3 +19,5 @@
 //= require wheel
 //= require recommendation
 //= require_fb
+//= require toastr
+//= require toastr_settings
