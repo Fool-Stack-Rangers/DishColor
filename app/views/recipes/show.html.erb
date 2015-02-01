@@ -1,31 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) %> |
-<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) %>
+<div class="col-md-12" style="text-align: center; padding:2px;margin:10px auto;">
+	<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) ,:class=>"cta"%> |
+	<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) ,:class=>"cta"%>
+</div>
+<div class="Recipe col-md-8 col-md-offset-2" style="height:auto;">
+	<div class="hero-photo col-md-6 animated fadeInLeft go" style="padding:15px;">
+		<%= image_tag @recipe.image.url,:style => "max-height:40vh;"%>
+	</div>
 
-<p>
-  <strong>料理名稱（食譜名稱）:</strong>
-  <%= @recipe.name %>
-</p>
+	<div class="title col-md-6">
+	  <h1><%= @recipe.name %></h1>
+	  <div class="colors">
+			<% if @recipe.high %>
+      	<span class="ColorSym <%= @recipe.high %>"></span>
+			<% end %>
+    	<% if @recipe.medium %>
+      	<span class="ColorSym <%= @recipe.medium %>"></span>
+			<% end %>
+    	<% if @recipe.low %>
+      	<span class="ColorSym <%= @recipe.low %>"></span>
+			<% end %>
+		</div>
+	  <div ><strong>上傳人:</strong><%= @recipe.user.name %></div>
+	</div>
 
-<p>
-  <strong>料理說明（食材）:</strong>
-  <%= @recipe.description %>
-</p>
+	<div class="col-md-12">
+	  <strong>料理說明（食材）:</strong>
+	  <%= @recipe.description %>
+	</div>
 
-<p>
-  <strong>上傳人:</strong>
-  <%= @recipe.user.name %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-<%= image_tag @recipe.image.url %>
-<p>
-</p>
+</div>
+<!-- </p>
 <%# image_tag @recipe.image.url(:small) %>
 <%# image_tag @recipe.image.url(:thumb) %>
-</p>
+</p> -->
 
-<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) %> |
-<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) %>
+<div class="col-md-12" style="text-align: center; padding:2px;margin:10px auto;">
+	<%= link_to '編輯這個食譜', edit_user_recipe_path(current_user, @recipe) ,:class=>"cta"%> |
+	<%= link_to '我的全部上傳的食譜', user_recipes_path(current_user) ,:class=>"cta"%>
+</div>
