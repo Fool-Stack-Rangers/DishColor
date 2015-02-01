@@ -37,6 +37,8 @@ $recipe-height: 160px
   height: $recipe-height
   width: $recipe-height
   left: 0
+  background-size: cover
+  background-repeat: no-repeat
 
 .Recipe-info
   margin-left: $recipe-height
@@ -58,10 +60,28 @@ $recipe-height: 160px
   right: 0
   top: 0
   height: 100%
+  width: 150px
   .cta
     position: absolute
     bottom: 20px
     width: 80%
     margin: 0 auto
     line-height: 1.8
-  width: 100px
+
+
+body.recipes.index
+  .Recipe-info
+    // background-color: #999
+    margin-right: 150px
+  .Recipe-checkbox
+    position: absolute
+    right: 0
+    top: 0
+    height: 100%
+    padding-top: 10px
+    .cta
+      position: static
+      width: 80%
+      margin: 6px 10px
+      line-height: 1.8
+      float: right

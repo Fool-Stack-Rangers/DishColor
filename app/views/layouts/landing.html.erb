@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "用顏色，找菜色" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Fr Template" %>">
+    <title><%= content_for?(:title) ? yield(:title) : "選顏色，找菜色" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "今晚不知道煮什麼嗎？ 來試試菜色！" %>">
+    <meta name="og:image" content="http://dishcolor.com/images/yellow-logo.png">
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'landing', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
