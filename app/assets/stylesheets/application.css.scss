@@ -19,6 +19,12 @@
   margin-top: 70px;
 }
 
+html,
+body,
+main {
+  height: 100%;
+}
+
 @import "compass";
 @import "flat-ui/variables";
 @import "bootstrap-sprockets";
