@@ -3,8 +3,8 @@
 
   <% @list.recipes.each do |r| %>
     <div class="Recipe" data-id="<%= r.id %>">
-      <div class="Recipe-photo">
-        <img src="<%= r.image %>">
+      <div class="Recipe-photo" style="background-image:url(<%= r.image %>)">
+        <img src="<%= r.image %>" style="opacity:0;">
       </div>
       <div class="Recipe-info">
         <h2><%= link_to r.name, recipes_path(r.id)%></h2>
@@ -29,7 +29,7 @@
     </span>
     <% end %>
     <span class="triangle-border pull-right">
-      <p>我也做了一樣創意料理，該找誰分享我的料理呢....</p>
+      <p>我也做了創意料理，該找誰分享我的料理呢....</p>
     </span>
   </div>
 </div>

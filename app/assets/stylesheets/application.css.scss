@@ -13,6 +13,12 @@
  *= require foundations/animate
  *= require_self
  */
+
+.no-result-img {
+  opacity: 0.5;
+  margin-top: 70px;
+}
+
 @import "compass";
 @import "flat-ui/variables";
 @import "bootstrap-sprockets";
