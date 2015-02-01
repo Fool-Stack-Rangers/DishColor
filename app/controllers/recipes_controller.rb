@@ -50,15 +50,15 @@
     datajson = []
     color = params[:colors]
     Recipe.find_each do |recipe|
-      if color.include?(recipe.low)
-        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
-                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
-      elsif color.include?(recipe.medium)
-        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
-                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
-      elsif color.include?(recipe.high)
-        datajson << {:id => recipe.id, :name => recipe.name, :description => recipe.description, :url => recipe.image,
-                      :high => recipe.high, :medium => recipe.medium, :low => recipe.low}
+      if color.include?(recipe.low) || color.include?(recipe.medium) || color.include?(recipe.high)
+        datajson << {:id              => recipe.id,
+                     :name            => recipe.name,
+                     :description     => recipe.description.truncate(60),
+                     :url             => recipe.image,
+                     :high            => recipe.high,
+                     :medium          => recipe.medium,
+                     :low             => recipe.low}
+
       end
       n=n+1
     end

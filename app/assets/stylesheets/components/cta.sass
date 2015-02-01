@@ -1,5 +1,6 @@
 $c-reset: #34495E
 $c-hint: #FDF6E3
+$c-disable: #DDD
 
 a.cta,
 .cta
@@ -38,3 +39,16 @@ a.cta,
   p
     line-height: 1.5
     margin: 0
+
+.cta.disabled
+  margin-top: 0
+  background-color: $c-disable
+  box-shadow: 0 0px 0 darken($c-disable, 5%)
+  &:hover
+    margin-top: 0
+    background-color: $c-disable
+    box-shadow: 0 0px 0 darken($c-disable, 5%)
+  &:active
+    margin-top: 0
+    background-color: $c-disable
+    box-shadow: 0 0px 0 darken($c-disable, 5%)

@@ -65,12 +65,12 @@
   ];
   function toggleColor(color){
     var colorsInfo = {
-      "red": { name:"red", id: 0   , title: "紅色", value:  40, color: "#FF0000" },
-      "yellow": { name:"yellow", id: 1, title: "黃色", value:  40, color: "#FFFF00" },
-      "green": { name:"green", id: 2 , title: "綠色", value:  40, color: "#00FF00" },
-      "blue": { name:"blue", id: 3  , title: "藍色", value:  40, color: "#0000FF" },
-      "coffee": { name:"coffee", id: 4 , title: "咖啡色", value: 40, color: "#4D3900" },
-      "black": { name:"black", id: 5 , title: "黑色", value:  40, color: "#000000" },
+      "red": { name:"red", id: 0   , title: "紅色", value:  40, color: "#FF5959" },
+      "yellow": { name:"yellow", id: 1, title: "黃色", value:  40, color: "#FFD500" },
+      "green": { name:"green", id: 2 , title: "綠色", value:  40, color: "#3EC73E" },
+      "blue": { name:"blue", id: 3  , title: "藍色", value:  40, color: "#458CDD" },
+      "coffee": { name:"coffee", id: 4 , title: "咖啡色", value: 40, color: "#A6661D" },
+      "black": { name:"black", id: 5 , title: "黑色", value:  40, color: "#4C4C4C" },
       "white": { name:"white", id: 6 , title: "白色", value:  40, color: "#FFFFFF" }
     }
 
@@ -106,6 +106,13 @@
     $.each(colorRecord, function(index, color){
       $('.AddColorBtn[data-id='+color.id+']').addClass('is_active');
     })
+    if(colorRecord.length > 0){
+      $('#suggestion-btn').removeClass("disabled");
+      $('#no-result').remove()
+    }else{
+      $('#suggestion-btn').addClass("disabled");
+
+    }
   }
 
   function getColorsToUrl(){
