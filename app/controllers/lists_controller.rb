@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    List.includes(:recipes)
     @list = List.find(params[:id])
   end
 

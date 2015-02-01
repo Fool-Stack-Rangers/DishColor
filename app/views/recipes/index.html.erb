@@ -1,32 +1,35 @@
-<h1>我的所有料理</h1>
+<div class="container">
+  <h1>我的所有料理</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>料理（食譜）名稱</th>
-      <th>料理說明（食材）</th>
-      <th>上傳人</th>
-      <th></th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
- 
-    <% @recipes.each do |recipe| %>
+  <table>
+    <thead>
       <tr>
-        <td><%= recipe.name %></td>
-        <td><%= recipe.description %></td>
-        <td><%= recipe.user.name %></td>
-        <td><%= link_to '顯示這道食譜細節', recipes_path(recipe) %></td>
-        <td> || </td>
-        <td><%= link_to '編輯這道食譜', edit_user_recipe_path(current_user, recipe) %></td>
-        <td> || </td>
-        <td><%= link_to '刪除這道食譜', user_recipe_path(current_user, recipe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>料理（食譜）名稱</th>
+        <th>料理說明（食材）</th>
+        <th>上傳人</th>
+        <th></th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<br>
+    </thead>
 
-<%= link_to '上傳我的創意料理照片', new_user_recipe_path %>
+    <tbody>
+
+      <% @recipes.each do |recipe| %>
+        <tr>
+          <td><%= recipe.name %></td>
+          <td><%= recipe.description %></td>
+          <td><%= recipe.user.name %></td>
+          <td><%= link_to '顯示這道食譜細節', recipes_path(recipe) %></td>
+          <td> || </td>
+          <td><%= link_to '編輯這道食譜', edit_user_recipe_path(current_user, recipe) %></td>
+          <td> || </td>
+          <td><%= link_to '刪除這道食譜', user_recipe_path(current_user, recipe), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to '新增我的創意料理', new_user_recipe_path %>
+</div>
+

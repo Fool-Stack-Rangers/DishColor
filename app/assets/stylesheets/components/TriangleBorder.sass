@@ -1,0 +1,32 @@
+.triangle-border
+  display: inline-block
+  margin: 0 auto
+  margin-right: 30px
+  width: 300px
+  line-height: 1.8
+  position: relative
+  margin-bottom: 30px
+  padding: 15px
+  border: 5px solid #5A8F00
+  color: #333
+  background: #FFF
+  -webkit-border-radius: 10px
+  -moz-border-radius: 10px
+  border-radius: 10px
+
+.triangle-border:before
+  content: ""
+  position: absolute
+  top: 10px
+  right: -20px
+  width: 0
+  height: 0
+  border-top: 20px solid transparent
+  border-bottom: 20px solid transparent
+  border-left: 20px solid green
+  display: block
+  width: 0
+
+.triangle-border p
+  line-height: 1.5
+  margin: 0
