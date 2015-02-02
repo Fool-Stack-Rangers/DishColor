@@ -34,7 +34,7 @@
 # Contributors
 - Otis    / [github](https://github.com/AnNOtis)
 - Ming    / [github](https://github.com/viflin)
-- Vincent / [github](https://github.com/dangjlin)
+- Daniel / [github](https://github.com/dangjlin)
 - Puff    / [github](https://github.com/puff-tw)
 
 License
