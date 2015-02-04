@@ -21,9 +21,14 @@
 }
 
 html,
-body,
-main {
+body {
   height: 100%;
+}
+
+main {
+  min-height: 95vh;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
 }
 
 @import "compass";
