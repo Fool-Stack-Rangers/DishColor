@@ -108,7 +108,6 @@
     })
     if(colorRecord.length > 0){
       $('#suggestion-btn').removeClass("disabled");
-      $('#no-result').remove()
     }else{
       $('#suggestion-btn').addClass("disabled");
 
